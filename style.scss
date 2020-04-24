@@ -1,0 +1,31 @@
+$bg:#333;
+$border:#f1f1f1;
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:$bg;
+}
+.artboard{
+    width:350px;
+    height:350px;
+    border:20px solid $border;
+    box-shadow: 0 2px 25px 5px rgba($border,0.15);
+    perspective: 200px;
+    overflow-y: hidden;
+}
+.line{
+    width:90%;
+    height:calc(340px/8);
+    margin-left: 5%;
+    background-image: linear-gradient(to top, $border 0%, $bg 80%);
+    box-sizing: border-box;
+    transform: translateY(calc(-340px / 8 * 15)) rotateX(90deg);
+    animation: animMovement 10s linear infinite;
+}
+@keyframes animMovement{
+    to{
+        transform: translateY(0px) rotateX(90deg);
+        }
+}
